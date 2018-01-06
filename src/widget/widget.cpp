@@ -266,6 +266,7 @@ void Widget::init()
     connect(filterGroup, &QActionGroup::triggered, this, &Widget::searchContacts);
     connect(filterDisplayGroup, &QActionGroup::triggered, this, &Widget::changeDisplayMode);
     connect(ui->friendList, &QWidget::customContextMenuRequested, this, &Widget::friendListContextMenu);
+    connect(ui->clearEmptyGroup, &QToolButton::clicked, this, &Widget::clearEmptyGroup);
 
     // keyboard shortcuts
     new QShortcut(Qt::CTRL + Qt::Key_Q, this, SLOT(close()));
@@ -405,6 +406,16 @@ void Widget::init()
 #ifdef Q_OS_MAC
     Nexus::getInstance().updateWindows();
 #endif
+}
+
+void Widget::clearEmptyGroup()
+{
+    qDebug()<<"";
+    QList<uint32_t> gids = contactListWidget->getEmptyGroup();
+    qDebug()<<gids.count();
+    for (uint32_t gid: gids) {
+        this->removeGroup(gid);
+    }
 }
 
 bool Widget::eventFilter(QObject* obj, QEvent* event)

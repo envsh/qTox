@@ -272,6 +272,23 @@ void FriendListWidget::moveFriends(QLayout* layout)
     }
 }
 
+QList<uint32_t> FriendListWidget::getEmptyGroup()
+{
+    QList<uint32_t> gids;
+    for (int i = 0; i < groupLayout.getLayout()->count(); i++) {
+        QWidget* widget = groupLayout.getLayout()->itemAt(i)->widget();
+        GroupWidget* groupWidget = qobject_cast<GroupWidget*>(widget);
+        if (groupWidget) {
+            Group* grp = groupWidget->getGroup();
+            if (grp->getPeersCount() <= 1) {
+                gids.append(grp->getId());
+            }
+        }
+    }
+
+    return gids;
+}
+
 FriendListWidget::Mode FriendListWidget::getMode() const
 {
     return mode;

@@ -122,6 +122,7 @@ public:
 
     static void confirmExecutableOpen(const QFileInfo& file);
 
+    void clearEmptyGroup();
     void clearAllReceipts();
     void reloadHistory();
 

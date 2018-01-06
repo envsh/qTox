@@ -49,6 +49,7 @@ public:
     void setMode(Mode mode);
     Mode getMode() const;
 
+    QList<uint32_t> getEmptyGroup();
     void addGroupWidget(GroupWidget* widget);
     void addFriendWidget(FriendWidget* w, Status s, int circleIndex);
     void removeGroupWidget(GroupWidget* w);

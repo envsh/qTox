@@ -331,6 +331,13 @@ QSplitter:handle{
                </property>
               </widget>
              </item>
+             <item>
+              <widget class="QToolButton" name="clearEmptyGroup">
+               <property name="text">
+                <string>X</string>
+               </property>
+              </widget>
+             </item>
             </layout>
            </item>
           </layout>
