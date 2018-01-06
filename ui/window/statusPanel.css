@@ -1,24 +1,16 @@
 QLineEdit
 {
-    background: none;
-    background-color: @themeMedium;
-    color: white;
     border: 0px;
     border-radius: 4px;
 }
 
 QToolButton {
-    background: none;
-    background-color: @themeMedium;
-    color: white;
     border-style: none;
     border-radius: 4px;
 }
 
 QToolButton:pressed {
-    background-color: @themeMediumDark;
     border-radius: 4px;
-    color: white;
 }
 
 QToolButton::menu-indicator {
@@ -26,9 +18,6 @@ QToolButton::menu-indicator {
 }
 
 QPushButton#green {
-    background: none;
-    background-color: #6bc260;
-    color: white;
     border-style: none;
     border-radius: 4px;
     padding: 4px;
@@ -37,12 +26,10 @@ QPushButton#green {
 
 QPushButton#green:hover
 {
-    background-color: #79c76f;
 }
 
 QPushButton#green:pressed
 {
-    background-color: #51b244;
 }
 
 /**
@@ -54,37 +41,28 @@ QComboBox:down-arrow {
 **/
 
 QListView {
-    background-color: @themeLight;
     border-style: none;
     border-radius: 4px;
 }
 
 #statusPanel
 {
-  background-color: @themeDark;
 }
 
 #statusPanel > #statusHead
 {
-  background-color: @themeDark;
 }
 
 #statusPanel > #statusHead > #nameLabel {
-  background-color: @themeDark;
   font: @extraBig;
-  color: @white;
 }
 
 #statusPanel > #statusHead > #statusLabel {
-  background-color: @themeDark;
   font: @medium;
-  color: @lightGrey;
 }
 
 #statusPanel > #statusHead > #statusButton
 {
-    background: none;
-    background-color: @themeMedium;
     border: none;
     border-radius: 6px;
     width: 20px;
@@ -94,12 +72,10 @@ QListView {
 /*Bugged in Qt, but it's probably better to leave enabled so that users can tell it's clickable*/
 #statusPanel > #statusHead > #statusButton:hover
 {
-  background-color: @themeLight;
 }
 
 #statusPanel > #statusHead > #statusButton:pressed
 {
-  background-color: @themeMedium;
 }
 
 #statusPanel > #statusHead > #statusButton:focus {

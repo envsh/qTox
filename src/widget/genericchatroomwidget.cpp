@@ -43,7 +43,7 @@ GenericChatroomWidget::GenericChatroomWidget(bool compact, QWidget* parent)
     statusMessageLabel->setTextFormat(Qt::PlainText);
     statusMessageLabel->setForegroundRole(QPalette::WindowText);
 
-    nameLabel->setForegroundRole(QPalette::WindowText);
+    // nameLabel->setForegroundRole(QPalette::WindowText);
 
     Settings& s = Settings::getInstance();
     connect(&s, &Settings::compactLayoutChanged, this, &GenericChatroomWidget::compactChange);
@@ -161,6 +161,7 @@ QString GenericChatroomWidget::getTitle() const
 void GenericChatroomWidget::reloadTheme()
 {
     QPalette p;
+    return;
 
     p = statusMessageLabel->palette();
     p.setColor(QPalette::WindowText, Style::getColor(Style::LightGrey));       // Base color

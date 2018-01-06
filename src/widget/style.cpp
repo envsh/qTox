@@ -182,6 +182,7 @@ void Style::repolish(QWidget* w)
 
 void Style::setThemeColor(int color)
 {
+    return;
     if (color < 0 || color >= themeColorColors.size())
         setThemeColor(QColor());
     else

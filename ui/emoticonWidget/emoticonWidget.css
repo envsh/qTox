@@ -1,6 +1,5 @@
 QPushButton
 {
-    background-color: transparent;
     background-repeat: none;
     border: none;
     width: 24px;
@@ -35,6 +34,5 @@ QRadioButton::indicator:checked
 
 QMenu
 {
-     background-color: @mediumGrey; /* sets background of the menu */
      border: 0px solid;
 }

@@ -78,7 +78,6 @@ QAbstractButton
 
 QAbstractButton:disabled
 {
-    background-color: #919191;
 }
 
 QAbstractButton:focus
@@ -88,45 +87,36 @@ QAbstractButton:focus
 
 QAbstractButton[state="green"]
 {
-    background-color: #6bc260;
 }
 
 QAbstractButton[state="green"]:hover
 {
-    background-color: #79c76f;
 }
 
 QAbstractButton[state="green"]:pressed
 {
-    background-color: #51b244;
 }
 
 QAbstractButton[state="red"]
 {
-    background-color: #c84e4e;
 }
 
 QAbstractButton[state="red"]:hover
 {
-    background-color: #e87474;
 }
 
 QAbstractButton[state="red"]:pressed
 {
-    background-color: #df3b3b;
 }
 
 QAbstractButton[state="yellow"]
 {
-    background-color: #e6e465;
 }
 
 QAbstractButton[state="yellow"]:hover
 {
-    background-color: #e8e774;
 }
 
 QAbstractButton[state="yellow"]:pressed
 {
-    background-color: #e3e155;
 }

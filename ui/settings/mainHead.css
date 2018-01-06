@@ -1,5 +1,3 @@
 QWidget .QLabel, QWidget .QLineEdit
 {
-    color: black;
-    background: white;
 }

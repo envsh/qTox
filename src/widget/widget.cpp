@@ -227,6 +227,7 @@ void Widget::init()
     Style::setThemeColor(Settings::getInstance().getThemeColor());
     reloadTheme();
     updateIcons();
+    setStyleSheet("background-color:white;");
 
     filesForm = new FilesForm();
     addFriendForm = new AddFriendForm;

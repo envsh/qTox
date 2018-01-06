@@ -1,6 +1,5 @@
 QPushButton
 {
-    background-color: #6bc260;
     background-image: url(":/ui/screenshotButton/screenshotButton.svg");
     background-repeat: none;
     background-position: center;
@@ -12,17 +11,14 @@ QPushButton
 
 QPushButton:hover
 {
-    background-color: #79c76f;
 }
 
 QPushButton:pressed
 {
-    background-color: #51b244;
 }
 
 QPushButton[enabled="false"]
 {
-    background-color: #919191;
 }
 
 QPushButton:focus

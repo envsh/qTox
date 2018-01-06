@@ -1,7 +1,5 @@
 QPushButton
 {
-    background: none;
-    background-color: @themeMediumDark;
     border: none;
     border-radius: 6px;
     width: 20px;
@@ -10,18 +8,15 @@ QPushButton
 
 QPushButton:default
 {
-   background-color: @themeMediumDark;
 }
 
 /*Bugged in Qt, but it's probably better to leave enabled so that users can tell it's clickable*/
 QPushButton:hover
 {
-   background-color: @themeMedium;
 }
 
 QPushButton:pressed
 {
-   background-color: @themeMediumDark;
 }
 
 QPushButton:focus {

@@ -55,7 +55,7 @@ ContentLayout::ContentLayout(QWidget* parent)
     palette.setBrush(QPalette::Disabled, QPalette::Text, QColor(127, 127, 127));
     palette.setBrush(QPalette::Disabled, QPalette::ButtonText, QColor(127, 127, 127));
 
-    parent->setPalette(palette);
+    // parent->setPalette(palette);
 }
 
 ContentLayout::~ContentLayout()
@@ -99,7 +99,7 @@ void ContentLayout::init()
     QPalette palette = mainHLine.palette();
     palette.setBrush(QPalette::WindowText, QBrush(QColor(193, 193, 193)));
     palette.setBrush(QPalette::WindowText, QBrush(QColor(193, 193, 193)));
-    mainHLine.setPalette(palette);
+    // mainHLine.setPalette(palette);
 
     mainContent = new QWidget();
     mainContent->setLayout(new QVBoxLayout);
@@ -107,8 +107,8 @@ void ContentLayout::init()
 
     if (QStyleFactory::keys().contains(Settings::getInstance().getStyle())
         && Settings::getInstance().getStyle() != "None") {
-        mainHead->setStyle(QStyleFactory::create(Settings::getInstance().getStyle()));
-        mainContent->setStyle(QStyleFactory::create(Settings::getInstance().getStyle()));
+        // mainHead->setStyle(QStyleFactory::create(Settings::getInstance().getStyle()));
+        // mainContent->setStyle(QStyleFactory::create(Settings::getInstance().getStyle()));
     }
 
 #ifndef Q_OS_MAC
