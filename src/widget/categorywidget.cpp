@@ -128,7 +128,7 @@ void CategoryWidget::addFriendWidget(FriendWidget* w, Status s)
     listLayout->addFriendWidget(w, s);
     updateStatus();
     onAddFriendWidget(w);
-    w->reloadTheme(); // Otherwise theme will change when moving to another circle.
+    // w->reloadTheme(); // Otherwise theme will change when moving to another circle.
 }
 
 void CategoryWidget::removeFriendWidget(FriendWidget* w, Status s)

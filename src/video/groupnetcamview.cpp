@@ -47,7 +47,7 @@ public:
         connect(videoSurface, &VideoSurface::ratioChanged, this, &LabeledVideo::updateSize);
         label = new CroppingLabel(this);
         label->setTextFormat(Qt::PlainText);
-        label->setStyleSheet("color: white");
+        // label->setStyleSheet("color: white");
 
         label->setAlignment(Qt::AlignCenter);
 
@@ -77,10 +77,12 @@ public:
 
     void setActive(bool active = true)
     {
-        if (active)
-            setStyleSheet("QFrame { background-color: #414141; border-radius: 10px; }");
-        else
-            setStyleSheet(QString());
+        if (active){
+            // setStyleSheet("QFrame { background-color: #414141; border-radius: 10px; }");
+        }
+        else{
+            // setStyleSheet(QString());
+        }
     }
 
 protected:
@@ -115,14 +117,13 @@ GroupNetCamView::GroupNetCamView(int group, QWidget* parent)
     videoSurface->setContentsMargins(6, 6, 6, 0);
     videoLabelSurface->setContentsMargins(0, 0, 0, 0);
     videoLabelSurface->layout()->setMargin(0);
-    videoLabelSurface->setStyleSheet("QFrame { background-color: black; }");
+    // videoLabelSurface->setStyleSheet("QFrame { background-color: black; }");
 
     QSplitter* splitter = new QSplitter(Qt::Vertical, this);
     splitter->setChildrenCollapsible(false);
     verLayout->insertWidget(0, splitter, 1);
     splitter->addWidget(videoLabelSurface);
-    splitter->setStyleSheet(
-        "QSplitter { background-color: black; } QSplitter::handle { background-color: black; }");
+    // splitter->setStyleSheet("QSplitter { background-color: black; } QSplitter::handle { background-color: black; }");
 
     QScrollArea* scrollArea = new QScrollArea();
     scrollArea->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);

@@ -109,9 +109,9 @@ void GUI::setWindowTitle(const QString& title)
 void GUI::reloadTheme()
 {
     if (QThread::currentThread() == qApp->thread()) {
-        getInstance()._reloadTheme();
+        // getInstance()._reloadTheme();
     } else {
-        QMetaObject::invokeMethod(&getInstance(), "_reloadTheme", Qt::BlockingQueuedConnection);
+        // QMetaObject::invokeMethod(&getInstance(), "_reloadTheme", Qt::BlockingQueuedConnection);
     }
 }
 
@@ -315,8 +315,9 @@ void GUI::_setWindowTitle(const QString& title)
 void GUI::_reloadTheme()
 {
     Widget* w = Nexus::getDesktopGUI();
-    if (w)
-        w->reloadTheme();
+    if (w) {
+        // w->reloadTheme();
+    }
 }
 
 void GUI::_showInfo(const QString& title, const QString& msg)

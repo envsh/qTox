@@ -57,21 +57,6 @@
       <property name="autoFillBackground">
        <bool>false</bool>
       </property>
-      <property name="styleSheet">
-       <string notr="true">QSplitter{
-	color: rgb(255, 255, 255);
-	background-color: rgb(255, 255, 255);
-	alternate-background-color: rgb(255, 255, 255);
-	border-color: rgb(255, 255, 255);
-	gridline-color: rgb(255, 255, 255);
-	selection-color: rgb(255, 255, 255);
-	selection-background-color: rgb(255, 255, 255);
-}
-QSplitter:handle{
-	color: rgb(255, 255, 255);
-	background-color: rgb(255, 255, 255);
-}</string>
-      </property>
       <property name="orientation">
        <enum>Qt::Horizontal</enum>
       </property>

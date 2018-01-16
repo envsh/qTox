@@ -44,14 +44,14 @@ GenericNetCamView::GenericNetCamView(QWidget* parent)
     verLayout->addSpacing(spacing);
 
     QFrame* lineFrame = new QFrame(this);
-    lineFrame->setStyleSheet("border: 1px solid #c1c1c1;");
+    // lineFrame->setStyleSheet("border: 1px solid #c1c1c1;");
     lineFrame->setFrameShape(QFrame::HLine);
     lineFrame->setMaximumHeight(1);
     verLayout->addWidget(lineFrame);
 
     setShowMessages(false);
 
-    setStyleSheet("NetCamView { background-color: #c1c1c1; }");
+    // setStyleSheet("NetCamView { background-color: #c1c1c1; }");
 }
 
 QSize GenericNetCamView::getSurfaceMinSize()

@@ -146,14 +146,13 @@ void Widget::init()
     connect(actionQuit, &QAction::triggered, qApp, &QApplication::quit);
 
     layout()->setContentsMargins(0, 0, 0, 0);
-    ui->friendList->setStyleSheet(
-        Style::resolve(Style::getStylesheet(":/ui/friendList/friendList.css")));
+    // ui->friendList->setStyleSheet(Style::resolve(Style::getStylesheet(":/ui/friendList/friendList.css")));
 
     profilePicture = new MaskablePixmapWidget(this, QSize(40, 40), ":/img/avatar_mask.svg");
     profilePicture->setPixmap(QPixmap(":/img/contact_dark.svg"));
     profilePicture->setClickable(true);
     profilePicture->setObjectName("selfAvatar");
-    profilePicture->setStyleSheet(Style::getStylesheet(":ui/window/profile.css"));
+    // profilePicture->setStyleSheet(Style::getStylesheet(":ui/window/profile.css"));
     ui->myProfile->insertWidget(0, profilePicture);
     ui->myProfile->insertSpacing(1, 7);
 
@@ -197,7 +196,7 @@ void Widget::init()
     ui->searchContactFilterBox->setMenu(filterMenu);
 
 #ifndef Q_OS_MAC
-    ui->statusHead->setStyleSheet(Style::getStylesheet(":/ui/window/statusPanel.css"));
+    // ui->statusHead->setStyleSheet(Style::getStylesheet(":/ui/window/statusPanel.css"));
 #endif
 
     contactListWidget = new FriendListWidget(this, Settings::getInstance().getGroupchatPosition());
@@ -207,7 +206,7 @@ void Widget::init()
 
     ui->statusLabel->setEditable(true);
 
-    ui->statusPanel->setStyleSheet(Style::getStylesheet(":/ui/window/statusPanel.css"));
+    // ui->statusPanel->setStyleSheet(Style::getStylesheet(":/ui/window/statusPanel.css"));
 
     QMenu* statusButtonMenu = new QMenu(ui->statusButton);
     statusButtonMenu->addAction(statusOnline);
@@ -224,10 +223,10 @@ void Widget::init()
     // Disable some widgets until we're connected to the DHT
     ui->statusButton->setEnabled(false);
 
-    Style::setThemeColor(Settings::getInstance().getThemeColor());
-    reloadTheme();
-    updateIcons();
-    setStyleSheet("background-color:white;");
+    // Style::setThemeColor(Settings::getInstance().getThemeColor());
+    // reloadTheme();
+    // updateIcons();
+    // setStyleSheet("background-color:white;");
 
     filesForm = new FilesForm();
     addFriendForm = new AddFriendForm;
@@ -2164,23 +2163,23 @@ void Widget::clearAllReceipts()
 
 void Widget::reloadTheme()
 {
-    this->setStyleSheet(Style::getStylesheet(":/ui/window/general.css"));
+    // this->setStyleSheet(Style::getStylesheet(":/ui/window/general.css"));
     QString statusPanelStyle = Style::getStylesheet(":/ui/window/statusPanel.css");
-    ui->tooliconsZone->setStyleSheet(Style::getStylesheet(":/ui/tooliconsZone/tooliconsZone.css"));
-    ui->statusPanel->setStyleSheet(statusPanelStyle);
-    ui->statusHead->setStyleSheet(statusPanelStyle);
-    ui->friendList->setStyleSheet(Style::getStylesheet(":/ui/friendList/friendList.css"));
-    ui->statusButton->setStyleSheet(Style::getStylesheet(":/ui/statusButton/statusButton.css"));
+    // ui->tooliconsZone->setStyleSheet(Style::getStylesheet(":/ui/tooliconsZone/tooliconsZone.css"));
+    // ui->statusPanel->setStyleSheet(statusPanelStyle);
+    // ui->statusHead->setStyleSheet(statusPanelStyle);
+    // ui->friendList->setStyleSheet(Style::getStylesheet(":/ui/friendList/friendList.css"));
+    // ui->statusButton->setStyleSheet(Style::getStylesheet(":/ui/statusButton/statusButton.css"));
     contactListWidget->reDraw();
 
     for (Friend* f : FriendList::getAllFriends()) {
         uint32_t friendId = f->getId();
-        friendWidgets[friendId]->reloadTheme();
+        // friendWidgets[friendId]->reloadTheme();
     }
 
     for (Group* g : GroupList::getAllGroups()) {
         uint32_t groupId = g->getId();
-        groupWidgets[groupId]->reloadTheme();
+        // groupWidgets[groupId]->reloadTheme();
     }
 }
 

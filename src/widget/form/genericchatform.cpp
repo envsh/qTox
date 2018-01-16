@@ -121,7 +121,7 @@ QPushButton* createButton(const QString& name, T* self, Fun onClickSlot)
     btn->setAttribute(Qt::WA_LayoutUsesWidgetRect);
     btn->setObjectName(name);
     btn->setProperty("state", "green");
-    btn->setStyleSheet(Style::getStylesheet(STYLE_PATH));
+    // btn->setStyleSheet(Style::getStylesheet(STYLE_PATH));
     QObject::connect(btn, &QPushButton::clicked, self, onClickSlot);
     return btn;
 }
@@ -161,8 +161,8 @@ GenericChatForm::GenericChatForm(QWidget* parent)
     fileLayout->setSpacing(0);
     fileLayout->setMargin(0);
 
-    msgEdit->setStyleSheet(Style::getStylesheet(":/ui/msgEdit/msgEdit.css")
-                           + fontToCss(s.getChatMessageFont(), "QTextEdit"));
+    // msgEdit->setStyleSheet(Style::getStylesheet(":/ui/msgEdit/msgEdit.css")
+    //                       + fontToCss(s.getChatMessageFont(), "QTextEdit"));
     msgEdit->setFixedHeight(MESSAGE_EDIT_HEIGHT);
     msgEdit->setFrameStyle(QFrame::NoFrame);
 
@@ -212,8 +212,8 @@ GenericChatForm::GenericChatForm(QWidget* parent)
     new QShortcut(Qt::CTRL + Qt::SHIFT + Qt::Key_L, this, SLOT(clearChatArea()));
     new QShortcut(Qt::ALT + Qt::Key_Q, this, SLOT(quoteSelectedText()));
 
-    chatWidget->setStyleSheet(Style::getStylesheet(":/ui/chatArea/chatArea.css"));
-    headWidget->setStyleSheet(Style::getStylesheet(":/ui/chatArea/chatHead.css"));
+// chatWidget->setStyleSheet(Style::getStylesheet(":/ui/chatArea/chatArea.css"));
+// headWidget->setStyleSheet(Style::getStylesheet(":/ui/chatArea/chatHead.css"));
 
     fileFlyout->setFixedSize(FILE_FLYOUT_SIZE);
     fileFlyout->setParent(this);
@@ -492,8 +492,7 @@ void GenericChatForm::onChatMessageFontChanged(const QFont& font)
     chatWidget->fontChanged(font);
     chatWidget->forceRelayout();
     // message editor
-    msgEdit->setStyleSheet(Style::getStylesheet(":/ui/msgEdit/msgEdit.css")
-                           + fontToCss(font, "QTextEdit"));
+    // msgEdit->setStyleSheet(Style::getStylesheet(":/ui/msgEdit/msgEdit.css") + fontToCss(font, "QTextEdit"));
 }
 
 void GenericChatForm::addSystemInfoMessage(const QString& message, ChatMessage::SystemMessageType type,

@@ -41,7 +41,7 @@ GenericChatroomWidget::GenericChatroomWidget(bool compact, QWidget* parent)
     // status text
     statusMessageLabel = new CroppingLabel(this);
     statusMessageLabel->setTextFormat(Qt::PlainText);
-    statusMessageLabel->setForegroundRole(QPalette::WindowText);
+    // statusMessageLabel->setForegroundRole(QPalette::WindowText);
 
     // nameLabel->setForegroundRole(QPalette::WindowText);
 
@@ -49,7 +49,7 @@ GenericChatroomWidget::GenericChatroomWidget(bool compact, QWidget* parent)
     connect(&s, &Settings::compactLayoutChanged, this, &GenericChatroomWidget::compactChange);
 
     setAutoFillBackground(true);
-    reloadTheme();
+    // reloadTheme();
 
     compactChange(isCompact());
 }
@@ -123,13 +123,13 @@ void GenericChatroomWidget::setActive(bool _active)
 {
     active = _active;
     if (active) {
-        setBackgroundRole(QPalette::Light);
-        statusMessageLabel->setForegroundRole(QPalette::HighlightedText);
-        nameLabel->setForegroundRole(QPalette::HighlightedText);
+        // setBackgroundRole(QPalette::Light);
+        // statusMessageLabel->setForegroundRole(QPalette::HighlightedText);
+        // nameLabel->setForegroundRole(QPalette::HighlightedText);
     } else {
-        setBackgroundRole(QPalette::Window);
-        statusMessageLabel->setForegroundRole(QPalette::WindowText);
-        nameLabel->setForegroundRole(QPalette::WindowText);
+        // setBackgroundRole(QPalette::Window);
+        // statusMessageLabel->setForegroundRole(QPalette::WindowText);
+        // nameLabel->setForegroundRole(QPalette::WindowText);
     }
 }
 
@@ -190,13 +190,15 @@ void GenericChatroomWidget::mouseReleaseEvent(QMouseEvent* event)
 
 void GenericChatroomWidget::enterEvent(QEvent*)
 {
-    if (!active)
-        setBackgroundRole(QPalette::Highlight);
+    if (!active) {
+        // setBackgroundRole(QPalette::Highlight);
+    }
 }
 
 void GenericChatroomWidget::leaveEvent(QEvent* event)
 {
-    if (!active)
-        setBackgroundRole(QPalette::Window);
+    if (!active) {
+        // setBackgroundRole(QPalette::Window);
+    }
     QWidget::leaveEvent(event);
 }

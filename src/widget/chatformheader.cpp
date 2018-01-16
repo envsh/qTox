@@ -82,7 +82,7 @@ QPushButton* createButton(const QString& name, T* self, Fun onClickSlot)
     QPushButton* btn = new QPushButton();
     btn->setAttribute(Qt::WA_LayoutUsesWidgetRect);
     btn->setObjectName(name);
-    btn->setStyleSheet(Style::getStylesheet(STYLE_PATH));
+    // btn->setStyleSheet(Style::getStylesheet(STYLE_PATH));
     QObject::connect(btn, &QPushButton::clicked, self, onClickSlot);
     return btn;
 }

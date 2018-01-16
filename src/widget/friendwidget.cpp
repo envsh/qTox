@@ -92,7 +92,7 @@ void FriendWidget::contextMenuEvent(QContextMenuEvent* event)
 void FriendWidget::onContextMenuCalled(QContextMenuEvent* event)
 {
     if (!active) {
-        setBackgroundRole(QPalette::Highlight);
+        // setBackgroundRole(QPalette::Highlight);
     }
 
     installEventFilter(this); // Disable leave event.
@@ -199,7 +199,7 @@ void FriendWidget::onContextMenuCalled(QContextMenuEvent* event)
     removeEventFilter(this);
 
     if (!active) {
-        setBackgroundRole(QPalette::Window);
+        // setBackgroundRole(QPalette::Window);
     }
 
     if (!selectedItem) {

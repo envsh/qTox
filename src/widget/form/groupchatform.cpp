@@ -226,7 +226,7 @@ void GroupChatForm::updateUserNames()
         }
         label->setTextFormat(Qt::PlainText);
         if (group->isSelfPeerNumber(peerNumber)) {
-            label->setStyleSheet(QStringLiteral("QLabel {color : green;}"));
+            // label->setStyleSheet(QStringLiteral("QLabel {color : green;}"));
         } else if (netcam != nullptr) {
             static_cast<GroupNetCamView*>(netcam)->addPeer(peerNumber, fullName);
         }
@@ -254,7 +254,7 @@ void GroupChatForm::updateUserNames()
 
 void GroupChatForm::peerAudioPlaying(int peer)
 {
-    peerLabels[peer]->setStyleSheet(QStringLiteral("QLabel {color : red;}"));
+    // peerLabels[peer]->setStyleSheet(QStringLiteral("QLabel {color : red;}"));
     if (!peerAudioTimers[peer]) {
         peerAudioTimers[peer] = new QTimer(this);
         peerAudioTimers[peer]->setSingleShot(true);
@@ -265,7 +265,7 @@ void GroupChatForm::peerAudioPlaying(int peer)
             if (peer >= peerLabels.size())
                 return;
 
-            peerLabels[peer]->setStyleSheet("");
+            // peerLabels[peer]->setStyleSheet("");
             delete peerAudioTimers[peer];
             peerAudioTimers[peer] = nullptr;
         });

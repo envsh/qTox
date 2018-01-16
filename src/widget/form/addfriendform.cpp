@@ -279,8 +279,8 @@ void AddFriendForm::onIdChanged(const QString& id)
     const QString labelText = isValidId ? QStringLiteral("%1 (%2)")
                                         : QStringLiteral("%1 <font color='red'>(%2)</font>");
     toxIdLabel.setText(labelText.arg(toxIdText, toxIdComment));
-    toxId.setStyleSheet(isValidId ? QStringLiteral("")
-                                  : QStringLiteral("QLineEdit { background-color: #FFC1C1; }"));
+    // toxId.setStyleSheet(isValidId ? QStringLiteral("")
+    //                              : QStringLiteral("QLineEdit { background-color: #FFC1C1; }"));
     toxId.setToolTip(isValidId ? QStringLiteral("") : tr("Invalid Tox ID format"));
 
     sendButton.setEnabled(isValidId && !tId.isEmpty());

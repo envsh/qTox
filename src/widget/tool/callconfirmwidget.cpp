@@ -67,15 +67,15 @@ CallConfirmWidget::CallConfirmWidget(const QWidget* anchor)
 
     QVBoxLayout* layout = new QVBoxLayout(this);
     QLabel* callLabel = new QLabel(QObject::tr("Incoming call..."), this);
-    callLabel->setStyleSheet("color: white");
+    // callLabel->setStyleSheet("color: white");
     callLabel->setWordWrap(true);
     callLabel->setAlignment(Qt::AlignHCenter);
     QDialogButtonBox* buttonBox = new QDialogButtonBox(Qt::Horizontal, this);
     QPushButton *accept = new QPushButton(this), *reject = new QPushButton(this);
     accept->setFlat(true);
     reject->setFlat(true);
-    accept->setStyleSheet("QPushButton{border:none;}");
-    reject->setStyleSheet("QPushButton{border:none;}");
+    // accept->setStyleSheet("QPushButton{border:none;}");
+    // reject->setStyleSheet("QPushButton{border:none;}");
     accept->setIcon(QIcon(":/ui/acceptCall/acceptCall.svg"));
     reject->setIcon(QIcon(":/ui/rejectCall/rejectCall.svg"));
     accept->setIconSize(accept->size());

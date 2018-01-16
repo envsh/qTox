@@ -79,8 +79,9 @@ void GroupWidget::updateTitle(uint32_t groupId, const QString& author, const QSt
 
 void GroupWidget::contextMenuEvent(QContextMenuEvent* event)
 {
-    if (!active)
-        setBackgroundRole(QPalette::Highlight);
+    if (!active) {
+        // setBackgroundRole(QPalette::Highlight);
+    }
 
     installEventFilter(this); // Disable leave event.
 
@@ -107,8 +108,9 @@ void GroupWidget::contextMenuEvent(QContextMenuEvent* event)
 
     removeEventFilter(this);
 
-    if (!active)
-        setBackgroundRole(QPalette::Window);
+    if (!active) {
+        // setBackgroundRole(QPalette::Window);
+    }
 
     if (!selectedItem) {
         return;
@@ -227,14 +229,16 @@ void GroupWidget::dragEnterEvent(QDragEnterEvent* ev)
     if (frnd)
         ev->acceptProposedAction();
 
-    if (!active)
-        setBackgroundRole(QPalette::Highlight);
+    if (!active) {
+        // setBackgroundRole(QPalette::Highlight);
+    }
 }
 
 void GroupWidget::dragLeaveEvent(QDragLeaveEvent*)
 {
-    if (!active)
-        setBackgroundRole(QPalette::Window);
+    if (!active) {
+        // setBackgroundRole(QPalette::Window);
+    }
 }
 
 void GroupWidget::dropEvent(QDropEvent* ev)
@@ -249,8 +253,9 @@ void GroupWidget::dropEvent(QDropEvent* ev)
         Core::getInstance()->groupInviteFriend(friendId, groupId);
     }
 
-    if (!active)
-        setBackgroundRole(QPalette::Window);
+    if (!active) {
+        // setBackgroundRole(QPalette::Window);
+    }
 }
 
 void GroupWidget::setName(const QString& name)
