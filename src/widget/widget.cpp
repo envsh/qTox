@@ -266,6 +266,7 @@ void Widget::init()
     connect(filterDisplayGroup, &QActionGroup::triggered, this, &Widget::changeDisplayMode);
     connect(ui->friendList, &QWidget::customContextMenuRequested, this, &Widget::friendListContextMenu);
     connect(ui->clearEmptyGroup, &QToolButton::clicked, this, &Widget::clearEmptyGroup);
+    connect(ui->loadGlobalCss, &QToolButton::clicked, this, &Widget::loadGlobalCss);
 
     // keyboard shortcuts
     new QShortcut(Qt::CTRL + Qt::Key_Q, this, SLOT(close()));
@@ -415,6 +416,18 @@ void Widget::clearEmptyGroup()
     for (uint32_t gid: gids) {
         this->removeGroup(gid);
     }
+}
+
+void Widget::loadGlobalCss()
+{
+    qDebug()<<"";
+    qApp->setStyleSheet("");
+    QFile fp("app.css");
+    fp.open(QIODevice::ReadOnly);
+    QByteArray cssbcc = fp.readAll();
+    fp.close();
+
+    qApp->setStyleSheet(QString(cssbcc));
 }
 
 bool Widget::eventFilter(QObject* obj, QEvent* event)

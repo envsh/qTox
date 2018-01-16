@@ -167,13 +167,17 @@ void GroupWidget::updateUserCount()
 void GroupWidget::setAsActiveChatroom()
 {
     setActive(true);
-    avatar->setPixmap(Style::scaleSvgImage(":img/group_dark.svg", avatar->width(), avatar->height()));
+    QString path = Style::icoResource("icon_avatar.png");
+    QPixmap pm = Style::scaleSvgImage(path, avatar->width(), avatar->height());
+    avatar->setPixmap(QPixmap(path));
 }
 
 void GroupWidget::setAsInactiveChatroom()
 {
     setActive(false);
-    avatar->setPixmap(Style::scaleSvgImage(":img/group.svg", avatar->width(), avatar->height()));
+    QString path = Style::icoResource("group.svg");
+    QPixmap pm = Style::scaleSvgImage(path, avatar->width(), avatar->height());
+    avatar->setPixmap(pm);
 }
 
 void GroupWidget::updateStatusLight()

@@ -68,6 +68,7 @@ public:
     static void setThemeColor(const QColor& color);
     static void applyTheme();
     static QPixmap scaleSvgImage(const QString& path, uint32_t width, uint32_t height);
+    static QString icoResource(const QString& filename);
 
     static QList<QColor> themeColorColors;
 

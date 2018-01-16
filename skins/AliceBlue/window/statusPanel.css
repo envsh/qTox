@@ -1,0 +1,106 @@
+QLineEdit
+{
+    border: 0px;
+    border-radius: 4px;
+}
+
+QToolButton {
+    border-style: none;
+    border-radius: 4px;
+}
+
+QToolButton:pressed {
+
+    border-radius: 4px;
+    
+}
+
+QToolButton::menu-indicator {
+    image: none
+}
+
+QPushButton#green {
+    border-style: none;
+    border-radius: 4px;
+    padding: 4px;
+    margin: 4px 8px;
+}
+
+QPushButton#green:hover
+{
+
+}
+
+QPushButton#green:pressed
+{
+
+}
+
+/**
+  Uncomment this after https://github.com/qTox/qTox/pull/1640
+  is merged!
+QComboBox:down-arrow {
+    image: url(ui/css/down_arrow.png);
+}
+**/
+
+QListView {
+    border-style: none;
+    border-radius: 4px;
+}
+
+#statusPanel
+{
+
+}
+
+#statusPanel > #statusHead
+{
+
+}
+
+#statusPanel > #statusHead > #nameLabel {
+  font: @extraBig;
+  color: @themeDark;
+}
+
+#statusPanel > #statusHead > #statusLabel {
+  font: @medium;
+}
+
+#statusPanel > #statusHead > #statusButton
+{
+    background: none;
+    background-color: @themeMedium;
+    border: none;
+    border-radius: 6px;
+    width: 20px;
+    height: 40px;
+}
+
+/*Bugged in Qt, but it's probably better to leave enabled so that users can tell it's clickable*/
+#statusPanel > #statusHead > #statusButton:hover
+{
+
+}
+
+#statusPanel > #statusHead > #statusButton:pressed
+{
+
+}
+
+#statusPanel > #statusHead > #statusButton:focus {
+  outline: none;
+}
+
+#statusPanel > #statusHead > #statusButton::menu-indicator {image: none;}
+
+#statusPanel > #statusHead > #statusButton::menu-indicator:pressed, #statusPanel > #statusHead > #statusButton::menu-indicator:open
+{
+  image: url(":ui/statusButton/menu_indicator.png");
+  subcontrol-origin: padding;
+  subcontrol-position: bottom center;
+  position: relative;
+  bottom: 2px;
+}
+

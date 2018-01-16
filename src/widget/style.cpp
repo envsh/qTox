@@ -233,3 +233,8 @@ QPixmap Style::scaleSvgImage(const QString& path, uint32_t width, uint32_t heigh
     render.render(&painter, pixmap.rect());
     return pixmap;
 }
+
+QString Style::icoResource(const QString& filename)
+{
+    return QString("./skins/material/img/%1").arg(filename);
+}

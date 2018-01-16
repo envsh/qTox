@@ -24,6 +24,7 @@
 #include "src/widget/tool/croppinglabel.h"
 #include <QBoxLayout>
 #include <QMouseEvent>
+#include <QStyle>
 
 GenericChatroomWidget::GenericChatroomWidget(bool compact, QWidget* parent)
     : GenericChatItemWidget(compact, parent)
@@ -123,10 +124,18 @@ void GenericChatroomWidget::setActive(bool _active)
 {
     active = _active;
     if (active) {
+        // set dynamic property for style sheet css use
+        setProperty("selected", true);
+        setProperty("mouse-hover", "");
+        style()->unpolish(this);
+        style()->polish(this);
         // setBackgroundRole(QPalette::Light);
         // statusMessageLabel->setForegroundRole(QPalette::HighlightedText);
         // nameLabel->setForegroundRole(QPalette::HighlightedText);
     } else {
+        setProperty("selected", false);
+        style()->unpolish(this);
+        style()->polish(this);
         // setBackgroundRole(QPalette::Window);
         // statusMessageLabel->setForegroundRole(QPalette::WindowText);
         // nameLabel->setForegroundRole(QPalette::WindowText);
@@ -192,6 +201,9 @@ void GenericChatroomWidget::enterEvent(QEvent*)
 {
     if (!active) {
         // setBackgroundRole(QPalette::Highlight);
+        setProperty("mouse-hover", true);
+        style()->unpolish(this);
+        style()->polish(this);
     }
 }
 
@@ -199,6 +211,9 @@ void GenericChatroomWidget::leaveEvent(QEvent* event)
 {
     if (!active) {
         // setBackgroundRole(QPalette::Window);
+        setProperty("mouse-hover", false);
+        style()->unpolish(this);
+        style()->polish(this);
     }
     QWidget::leaveEvent(event);
 }

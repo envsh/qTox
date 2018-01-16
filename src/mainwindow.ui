@@ -318,6 +318,9 @@
              </item>
              <item>
               <widget class="QToolButton" name="clearEmptyGroup">
+               <property name="toolTip">
+                <string>clear empty groups</string>
+               </property>
                <property name="text">
                 <string>X</string>
                </property>
@@ -576,6 +579,16 @@
              </property>
              <property name="flat">
               <bool>true</bool>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QToolButton" name="loadGlobalCss">
+             <property name="toolTip">
+              <string>reload app.css for test</string>
+             </property>
+             <property name="text">
+              <string>LC</string>
              </property>
             </widget>
            </item>

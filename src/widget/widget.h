@@ -123,6 +123,7 @@ public:
     static void confirmExecutableOpen(const QFileInfo& file);
 
     void clearEmptyGroup();
+    void loadGlobalCss();
     void clearAllReceipts();
     void reloadHistory();
 
