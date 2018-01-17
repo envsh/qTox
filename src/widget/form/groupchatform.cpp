@@ -92,7 +92,8 @@ GroupChatForm::GroupChatForm(Group* chatGroup)
     retranslateUi();
 
     const QSize& size = headWidget->getAvatarSize();
-    headWidget->setAvatar(Style::scaleSvgImage(":/img/group_dark.svg", size.width(), size.height()));
+    QString path = Style::icoResource("./group.svg");
+    headWidget->setAvatar(Style::scaleSvgImage(path, size.width(), size.height()));
 
     msgEdit->setObjectName("group");
 

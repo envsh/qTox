@@ -84,14 +84,14 @@ void GenericChatroomWidget::compactChange(bool _compact)
         delete textLayout; // Not needed
         setFixedHeight(25);
         avatar->setSize(QSize(20, 20));
-        mainLayout->addSpacing(18);
+        mainLayout->addSpacing(3);
         mainLayout->addWidget(avatar);
-        mainLayout->addSpacing(5);
+        mainLayout->addSpacing(3);
         mainLayout->addWidget(nameLabel);
         mainLayout->addWidget(statusMessageLabel);
-        mainLayout->addSpacing(5);
+        mainLayout->addSpacing(3);
         mainLayout->addWidget(&statusPic);
-        mainLayout->addSpacing(5);
+        mainLayout->addSpacing(3);
         mainLayout->activate();
         statusMessageLabel->setFont(Style::getFont(Style::Small));
         nameLabel->setFont(Style::getFont(Style::Medium));
@@ -102,13 +102,13 @@ void GenericChatroomWidget::compactChange(bool _compact)
         textLayout->addWidget(nameLabel);
         textLayout->addWidget(statusMessageLabel);
         textLayout->addStretch();
-        mainLayout->addSpacing(20);
+        mainLayout->addSpacing(5);
         mainLayout->addWidget(avatar);
-        mainLayout->addSpacing(10);
+        mainLayout->addSpacing(5);
         mainLayout->addLayout(textLayout);
-        mainLayout->addSpacing(10);
+        mainLayout->addSpacing(5);
         mainLayout->addWidget(&statusPic);
-        mainLayout->addSpacing(10);
+        mainLayout->addSpacing(5);
         mainLayout->activate();
         statusMessageLabel->setFont(Style::getFont(Style::Medium));
         nameLabel->setFont(Style::getFont(Style::Big));

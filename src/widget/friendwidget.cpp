@@ -46,6 +46,7 @@
 #include <QInputDialog>
 #include <QMenu>
 #include <QMimeData>
+#include <QPainter>
 
 #include <cassert>
 
@@ -312,7 +313,13 @@ void FriendWidget::updateStatusLight()
 
     const bool event = frnd->getEventFlag();
     const int index = static_cast<int>(frnd->getStatus()) * 2 + event;
+    QImage image(statuses[index]);
+    QPainter* painter = new QPainter(&image);
+    painter->setPen(Qt::blue);
+    painter->setFont(QFont("Arial", 10));
+    painter->drawText(image.rect(), Qt::AlignCenter|Qt::AlignHCenter, "999");
     statusPic.setPixmap(QPixmap(statuses[index]));
+    statusPic.setPixmap(QPixmap::fromImage(image));
 
     if (event) {
         const Settings& s = Settings::getInstance();

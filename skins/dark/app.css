@@ -1,14 +1,24 @@
 
 QMainWindow {
-    background-color: white;
+    background-color: black;
+    color: white;
 }
 
 AdjustingScrollArea#friendList {
-    background-color: white;
+    background-color: black;
 }
 QLineEdit#searchContactText {
     border: none;
+    background-color: black;
+    color: white;
 }
+ChatTextEdit {
+    background-color: black;
+    color: white;
+}
+
+/**** test ****/
+
 #qt_scrollarea_viewport-- {
     background-color: white;
 }
@@ -20,9 +30,12 @@ QFrame#statusPanel-- {
 }
 
 
+QLabel {
+    color: white;
+}
 /*******************/
 GroupWidget {
-    background-color: none;
+    background-color: black;
     margin-left: 12px;
 }
 
@@ -30,21 +43,14 @@ GroupWidget[selected=true] {
     background-color: #38a3d8;
 }
 
-GroupWidget {
-    background-color: white;
-}
-
 GroupWidget[mouse-hover=true] {
-    background-color: #eeeeee;
+    background-color: #414141;
 }
 
-GroupWidget {
-    background-color: white;
-}
 
 /****************/
 FriendWidget {
-    background-color: none;
+    background-color: black;
     margin-left: 8px;
 }
 
@@ -52,36 +58,59 @@ FriendWidget[selected=true] {
     background-color: #38a3d8;
 }
 
-FriendWidget {
-    background-color: white;
-}
-
 FriendWidget[mouse-hover=true] {
-    background-color: #eeeeee;
-}
-
-FriendWidget {
-    background-color: white;
+    background-color: #414141;
 }
 
 /********************/
 QWidget#circleWidgetContainer:hover
 {
-    background-color: #eeeeee;
+    background-color: #414141;
 }
 QWidget#circleWidgetContainer
 {
-    background-color: white;
+    background-color: black;
     margin-left: 12px;
 }
 
 /*********************/
 QToolButton {
     qproperty-autoRaise: true;
+    color: white;
 }
 
 QPushButton {
     qproperty-flat: true;
+    color: white;
+}
+
+QCheckBox {
+    color: white;
+}
+
+QLineEdit {
+    background-color: black;
+    color: white;
+}
+
+QTextEdit {
+    background-color: black;
+    color: white;
+}
+
+QComboBox {
+    background-color: black;
+    color: white;
+}
+
+QSpinBox {
+    background-color: black;
+    color: white;
+}
+
+QMenu {
+    background-color: black;
+    color: white;
 }
 
 /* Header */
@@ -152,6 +181,38 @@ QAbstractButton#sendButton
     height: 50px;
 }
 
+QAbstractButton#addButton
+{
+    background-image: url(./skins/dark/img/add.svg);
+    border-radius: 5px;
+    width: 50px;
+    height: 35px;
+}
+
+QAbstractButton#groupButton
+{
+    background-image: url(./skins/dark/img/group.svg);
+    border-radius: 5px;
+    width: 50px;
+    height: 35px;
+}
+
+QAbstractButton#transferButton
+{
+    background-image: url("./skins/dark/img/transfer.svg");
+    border-radius: 5px;
+    width: 50px;
+    height: 35px;
+}
+
+QAbstractButton#settingsButton
+{
+    background-image: url("./skins/dark/img/settings.svg");
+    border-radius: 5px;
+    width: 50px;
+    height: 35px;
+}
+
 /* Common */
 
 QAbstractButton
@@ -188,8 +249,20 @@ QAbstractButton[state="green"]:pressed
 
 /******************/
 ChatLog {
-    background-color: white;
     border: 0px;
+}
+QGraphicsView {
+    qproperty-backgroundBrush: black;
+    qproperty-foregroundBrush: none;
+}
+QGraphicsItem {
+    
+}
+Text {
+
+}
+ChatLog > QWidget {
+
 }
 
 /*******************/
@@ -269,13 +342,13 @@ QScrollBar::add-page:horizontal, QScrollBar::sub-page:horizontal {
 
 /***********************/
 QTabWidget {
-    background-color: white;
+    background-color: black;
 }
 QStackedWidget {
-    background-color: white;
+    background-color: black;
 }
 QGroupBox {
-    background-color: white;
+    background-color: black;
 }
 
 VerticalOnlyScroller {
