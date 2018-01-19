@@ -53,6 +53,8 @@ public:
     void setMentionedFlag(bool f);
     bool getMentionedFlag() const;
 
+    int getUnreadMessageCount() const;
+
     void updatePeer(int peerId, QString newName);
     void setName(const QString& newTitle) override;
     void onTitleChanged(const QString& author, const QString& newTitle);
@@ -75,6 +77,7 @@ private:
     QMap<QByteArray, QString> toxids;
     bool hasNewMessages;
     bool userWasMentioned;
+    int unreadMessageCount;
     int groupId;
     int nPeers;
     int selfPeerNum = -1;

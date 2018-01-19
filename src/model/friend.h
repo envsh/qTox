@@ -50,6 +50,8 @@ public:
     void setEventFlag(bool f) override;
     bool getEventFlag() const override;
 
+    int getUnreadMessageCount() const;
+
     const ToxPk& getPublicKey() const;
     uint32_t getId() const override;
 
@@ -75,6 +77,7 @@ private:
     ToxPk friendPk;
     uint32_t friendId;
     bool hasNewEvents;
+    int unreadMessageCount;
     Status friendStatus;
 
     ChatForm* chatForm;

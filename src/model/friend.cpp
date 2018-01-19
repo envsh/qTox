@@ -32,6 +32,7 @@ Friend::Friend(uint32_t friendId, const ToxPk& friendPk, const QString& userAlia
     , friendPk{friendPk}
     , friendId{friendId}
     , hasNewEvents{false}
+    , unreadMessageCount{0}
     , friendStatus{Status::Offline}
 {
     if (userName.isEmpty()) {
@@ -117,11 +118,21 @@ uint32_t Friend::getId() const
 void Friend::setEventFlag(bool flag)
 {
     hasNewEvents = flag;
+    if (flag) {
+        unreadMessageCount += 1;
+    } else {
+        unreadMessageCount = 0;
+    }
 }
 
 bool Friend::getEventFlag() const
 {
     return hasNewEvents;
+}
+
+int Friend::getUnreadMessageCount() const
+{
+    return unreadMessageCount;
 }
 
 void Friend::setStatus(Status s)

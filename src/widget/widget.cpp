@@ -223,10 +223,9 @@ void Widget::init()
     // Disable some widgets until we're connected to the DHT
     ui->statusButton->setEnabled(false);
 
-    // Style::setThemeColor(Settings::getInstance().getThemeColor());
-    // reloadTheme();
-    // updateIcons();
-    // setStyleSheet("background-color:white;");
+    Style::setThemeColor(Settings::getInstance().getThemeColor());
+    reloadTheme();
+    updateIcons();
 
     filesForm = new FilesForm();
     addFriendForm = new AddFriendForm;
@@ -2194,6 +2193,7 @@ void Widget::reloadTheme()
         uint32_t groupId = g->getId();
         // groupWidgets[groupId]->reloadTheme();
     }
+    Style::applyTheme();
 }
 
 void Widget::nextContact()

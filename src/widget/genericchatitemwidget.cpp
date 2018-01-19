@@ -53,3 +53,14 @@ void GenericChatItemWidget::searchName(const QString& searchString, bool hide)
 {
     setVisible(!hide && getName().contains(searchString, Qt::CaseInsensitive));
 }
+
+QString iconLabelWithText(const QString& icopath, const QString& txt, const QString& position)
+{
+    QString rtxt;
+    if (position == "right") {
+        rtxt = "<html><head/><body><table><tr><td><img src=\"%1\"/></td><td>%2</td></tr></table></body></html>";
+    } else if (position == "bottom") {
+        rtxt = "<html><head/><body><table><tr><td><img src=\"%1\"/></td></tr><tr><td align=center>%2</td></tr></table></body></html>";
+    }
+    return rtxt.arg(icopath).arg(txt);
+}

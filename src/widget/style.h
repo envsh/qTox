@@ -61,6 +61,7 @@ public:
     static QStringList getThemeColorNames();
     static QString getStylesheet(const QString& filename, const QFont& baseFont = QFont());
     static QColor getColor(ColorPalette entry);
+    static QColor getColor(QString entry);
     static QFont getFont(Font font);
     static QString resolve(QString qss, const QFont& baseFont = QFont());
     static void repolish(QWidget* w);

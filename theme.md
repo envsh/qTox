@@ -26,5 +26,6 @@ tooltips:
 * scollbar-background-color
 * scollbar-foreground-color
 * self-icon-area-background-color
-* avatar-background-color
+* avatar-background-color?
+* button-mask-background?
 

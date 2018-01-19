@@ -44,6 +44,7 @@ Group::Group(int groupId, const QString& name, bool isAvGroupchat, const QString
     // on naming is appropriate
     hasNewMessages = 0;
     userWasMentioned = 0;
+    unreadMessageCount = 0;
 }
 
 Group::~Group()
@@ -155,6 +156,11 @@ bool Group::isSelfPeerNumber(int num) const
 void Group::setEventFlag(bool f)
 {
     hasNewMessages = f;
+    if (f) {
+        unreadMessageCount += 1;
+    } else {
+        unreadMessageCount = 0;
+    }
 }
 
 bool Group::getEventFlag() const
@@ -170,6 +176,11 @@ void Group::setMentionedFlag(bool f)
 bool Group::getMentionedFlag() const
 {
     return userWasMentioned;
+}
+
+int Group::getUnreadMessageCount() const
+{
+    return unreadMessageCount;
 }
 
 QString Group::resolveToxId(const ToxPk& id) const

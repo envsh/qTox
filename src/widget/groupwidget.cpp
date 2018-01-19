@@ -158,9 +158,10 @@ void GroupWidget::updateUserCount()
     if (g) {
         int peersCount = g->getPeersCount();
         if (peersCount == 1)
-            statusMessageLabel->setText(tr("1 user in chat"));
+            statusMessageLabel->setText(isCompact() ? tr("1 user") : tr("1 user in chat"));
         else
-            statusMessageLabel->setText(tr("%1 users in chat").arg(peersCount));
+            statusMessageLabel->setText((isCompact() ? tr("%1 users") : tr("%1 users in chat"))
+                                        .arg(peersCount));
     }
 }
 
@@ -188,8 +189,12 @@ void GroupWidget::updateStatusLight()
         statusPic.setPixmap(QPixmap(":img/status/dot_online.svg"));
         statusPic.setMargin(3);
     } else {
+        QString sep = isCompact() ? " " : "<br/>";
         statusPic.setPixmap(QPixmap(":img/status/dot_online_notification.svg"));
         statusPic.setMargin(0);
+        statusPic.setText(iconLabelWithText(":img/status/dot_online_notification.svg",
+                                            QString::number(g->getUnreadMessageCount()),
+                                            isCompact() ? "right" : "bottom"));
     }
 }
 

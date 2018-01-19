@@ -432,10 +432,6 @@
              <property name="text">
               <string/>
              </property>
-             <property name="icon">
-              <iconset resource="../res.qrc">
-               <normaloff>:/img/add.svg</normaloff>:/img/add.svg</iconset>
-             </property>
              <property name="iconSize">
               <size>
                <width>15</width>
@@ -479,10 +475,6 @@
              <property name="text">
               <string/>
              </property>
-             <property name="icon">
-              <iconset resource="../res.qrc">
-               <normaloff>:/img/group.svg</normaloff>:/img/group.svg</iconset>
-             </property>
              <property name="iconSize">
               <size>
                <width>15</width>
@@ -523,10 +515,6 @@
              <property name="text">
               <string/>
              </property>
-             <property name="icon">
-              <iconset resource="../res.qrc">
-               <normaloff>:/img/transfer.svg</normaloff>:/img/transfer.svg</iconset>
-             </property>
              <property name="iconSize">
               <size>
                <width>15</width>
@@ -566,10 +554,6 @@
              </property>
              <property name="text">
               <string/>
-             </property>
-             <property name="icon">
-              <iconset resource="../res.qrc">
-               <normaloff>:/img/settings.svg</normaloff>:/img/settings.svg</iconset>
              </property>
              <property name="iconSize">
               <size>

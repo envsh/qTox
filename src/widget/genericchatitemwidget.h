@@ -55,4 +55,6 @@ private:
     bool compact;
 };
 
+QString iconLabelWithText(const QString& icopath, const QString& txt, const QString& position);
+
 #endif // GENERICCHATITEMWIDGET_H

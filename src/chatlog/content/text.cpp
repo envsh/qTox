@@ -38,7 +38,7 @@ Text::Text(const QString& txt, const QFont& font, bool enableElide, const QStrin
     : rawText(rwText)
     , elide(enableElide)
     , defFont(font)
-    , defStyleSheet(Style::getStylesheet(QStringLiteral(":/ui/chatArea/innerStyle.css"), font))
+      // , defStyleSheet(Style::getStylesheet(QStringLiteral(":/ui/chatArea/innerStyle.css"), font))
     , color(c)
 {
     setText(txt);
@@ -196,10 +196,11 @@ void Text::paint(QPainter* painter, const QStyleOptionGraphicsItem* option, QWid
     }
 
     const QColor selectionColor = QColor::fromRgbF(0.23, 0.68, 0.91);
-    sel.format.setBackground(selectionColor.lighter(selectionHasFocus ? 100 : 160));
-    sel.format.setForeground(selectionHasFocus ? Qt::white : Qt::black);
+    // sel.format.setBackground(selectionColor.lighter(selectionHasFocus ? 100 : 160));
+    // sel.format.setForeground(selectionHasFocus ? Qt::white : Qt::black);
+    // sel.format.setForeground(selectionHasFocus ? Qt::black : Qt::white);
     ctx.selections.append(sel);
-    ctx.palette.setColor(QPalette::Text, color);
+    // ctx.palette.setColor(QPalette::Text, color);
 
     // draw text
     doc->documentLayout()->draw(painter, ctx);

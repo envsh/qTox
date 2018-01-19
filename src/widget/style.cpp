@@ -30,6 +30,7 @@
 #include <QStyle>
 #include <QSvgRenderer>
 #include <QWidget>
+#include <QApplication>
 
 /**
  * @enum Style::Font
@@ -81,16 +82,47 @@ static QColor palette[] = {
     QColor("#1c1c1c"), QColor("#2a2a2a"), QColor("#414141"), QColor("#4e4e4e"),
 };
 
+static QList<QMap<QString, QColor> > palettes = {
+    {
+        {"background", QColor("")}, {"foreground", QColor("")},
+        {"hover", QColor("")}, {"selected", QColor("")},
+        {"scrollbar-background", QColor("")},
+        {"scrollbar-foreground", QColor("")},
+        {"button-mask-background", QColor("")},
+        {"avatar-background", QColor("")},
+        {"self-icon-area-background-color", QColor("")},
+    },
+    {},
+    {},
+    {},
+    {},
+    {
+        {"background", QColor("")}, {"foreground", QColor("")},
+        {"hover", QColor("")}, {"selected", QColor("")},
+        {"scrollbar-background", QColor("")},
+        {"scrollbar-foreground", QColor("")},
+        {"button-mask-background", QColor("")},
+        {"avatar-background", QColor("")},
+        {"self-icon-area-background-color", QColor("")},
+    },
+};
+
 static QMap<QString, QString> dict;
+static int themeId = 0; // default
+
+static QStringList getThemeColorNamesEn()
+{
+    return {"Default", "Blue", "Olive", "Red", "Violet", "Material"};
+}
 
 QStringList Style::getThemeColorNames()
 {
     return {QObject::tr("Default"), QObject::tr("Blue"), QObject::tr("Olive"), QObject::tr("Red"),
-            QObject::tr("Violet")};
+            QObject::tr("Violet"), QObject::tr("Material")};
 }
 
 QList<QColor> Style::themeColorColors = {QColor(), QColor("#004aa4"), QColor("#97ba00"),
-                                         QColor("#c23716"), QColor("#4617b5")};
+                                         QColor("#c23716"), QColor("#4617b5"), QColor("#ffffff")};
 
 QString Style::getStylesheet(const QString& filename, const QFont& baseFont)
 {
@@ -106,6 +138,11 @@ QString Style::getStylesheet(const QString& filename, const QFont& baseFont)
 QColor Style::getColor(Style::ColorPalette entry)
 {
     return palette[entry];
+}
+
+QColor Style::getColor(QString entry)
+{
+    return palettes[themeId][entry];
 }
 
 QFont Style::getFont(Style::Font font)
@@ -182,6 +219,8 @@ void Style::repolish(QWidget* w)
 
 void Style::setThemeColor(int color)
 {
+    qDebug()<<"color:"<<color<<Style::getThemeColorNames()[color];
+    themeId = color;
     return;
     if (color < 0 || color >= themeColorColors.size())
         setThemeColor(QColor());
@@ -222,6 +261,13 @@ void Style::setThemeColor(const QColor& color)
 void Style::applyTheme()
 {
     GUI::reloadTheme();
+    QString themeNameEn = themeId == 0 ? "dark" : getThemeColorNamesEn().at(themeId).toLower();
+    QString cssFile = QString("./skins/%1/app.css").arg(themeNameEn);
+    QFile fp(cssFile);
+    fp.open(QIODevice::ReadOnly);
+    QByteArray csstxt = fp.readAll();
+    fp.close();
+    qApp->setStyleSheet(QString(csstxt));
 }
 
 QPixmap Style::scaleSvgImage(const QString& path, uint32_t width, uint32_t height)
