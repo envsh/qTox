@@ -152,6 +152,38 @@ QAbstractButton#sendButton
     height: 50px;
 }
 
+QAbstractButton#addButton
+{
+    background-image: url(./skins/material/img/add.svg);
+    border-radius: 5px;
+    width: 50px;
+    height: 35px;
+}
+
+QAbstractButton#groupButton
+{
+    background-image: url(./skins/material/img/group.svg);
+    border-radius: 5px;
+    width: 50px;
+    height: 35px;
+}
+
+QAbstractButton#transferButton
+{
+    background-image: url("./skins/material/img/transfer.svg");
+    border-radius: 5px;
+    width: 50px;
+    height: 35px;
+}
+
+QAbstractButton#settingsButton
+{
+    background-image: url("./skins/material/img/settings.svg");
+    border-radius: 5px;
+    width: 50px;
+    height: 35px;
+}
+
 /* Common */
 
 QAbstractButton
