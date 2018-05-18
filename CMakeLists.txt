@@ -191,6 +191,7 @@ execute_process(COMMAND ${CMAKE_COMMAND} -E copy_if_different
   ${CMAKE_CURRENT_BINARY_DIR}/translations.qrc)
 
 set(${PROJECT_NAME}_SOURCES
+  /home/me/oss/src/mkuse/tox-inspector/tox_insp.c
   src/audio/audio.cpp
   src/audio/audio.h
   src/audio/backend/openal.cpp

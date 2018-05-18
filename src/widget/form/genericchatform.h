@@ -60,6 +60,7 @@ public:
     ~GenericChatForm() override;
 
     void setName(const QString& newName);
+    void setIp(const QString& ip);
     virtual void show() final
     {
     }

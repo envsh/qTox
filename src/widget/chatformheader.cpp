@@ -123,9 +123,23 @@ ChatFormHeader::ChatFormHeader(QWidget* parent)
     nameLabel->setTextFormat(Qt::PlainText);
     connect(nameLabel, &CroppingLabel::editFinished, this, &ChatFormHeader::onNameChanged);
 
+    ipLabel = new CroppingLabel();
+    ipLabel->setObjectName("ipLabel");
+    ipLabel->setMinimumHeight(Style::getFont(Style::Medium).pixelSize());
+    ipLabel->setEditable(false);
+    ipLabel->setTextFormat(Qt::PlainText);
+    ipLabel->setText("0.0.0.0?");
+    ipLabel->setTextInteractionFlags(Qt::TextSelectableByMouse);
+
     headTextLayout = new QVBoxLayout();
+
+    QHBoxLayout *nameipLayout = new QHBoxLayout();
+    nameipLayout->addWidget(nameLabel);
+    nameipLayout->addStretch();
+    nameipLayout->addWidget(ipLabel);
+
     headTextLayout->addStretch();
-    headTextLayout->addWidget(nameLabel);
+    headTextLayout->addLayout(nameipLayout);
     headTextLayout->addStretch();
 
     micButton = createButton("micButton", this, &ChatFormHeader::micMuteToggle);
@@ -295,4 +309,9 @@ void ChatFormHeader::onNameChanged(const QString& name)
         nameLabel->setText(name);
         emit nameChanged(name);
     }
+}
+
+void ChatFormHeader::setIp(const QString ip)
+{
+    ipLabel->setText(ip);
 }

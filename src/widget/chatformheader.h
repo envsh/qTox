@@ -58,6 +58,7 @@ public:
 
     void setName(const QString& newName);
     void setMode(Mode mode);
+    void setIp(const QString ip);
 
     void showOutgoingCall(bool video);
     void showCallConfirm(bool video);
@@ -96,6 +97,7 @@ private:
     MaskablePixmapWidget* avatar;
     QVBoxLayout* headTextLayout;
     CroppingLabel* nameLabel;
+    CroppingLabel* ipLabel;
 
     QPushButton* callButton;
     QPushButton* videoButton;

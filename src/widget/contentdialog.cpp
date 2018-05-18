@@ -722,6 +722,7 @@ void ContentDialog::activate(GenericChatroomWidget* widget)
     widget->updateStatusLight();
 
     updateTitleAndStatusIcon();
+
 }
 
 /**
@@ -738,6 +739,13 @@ void ContentDialog::updateFriendWidget(uint32_t friendId, QString alias)
 
     Status status = f->getStatus();
     friendLayout->addFriendWidget(friendWidget, status);
+
+        if (widget != nullptr) {
+                Core* core = Core::getInstance();
+            QString ip = core->getFriendIp(f->getId());
+            
+            ((ChatForm*)widget)->setIp(ip);
+    }
 }
 
 /**

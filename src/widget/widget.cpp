@@ -912,6 +912,13 @@ void Widget::hideMainForms(GenericChatroomWidget* chatroomWidget)
     }
 
     activeChatroomWidget = chatroomWidget;
+    if (chatroomWidget != nullptr) {
+    if (const Friend* f = activeChatroomWidget->getFriend()) {
+                Core* core = Nexus::getCore();
+            QString ip = core->getFriendIp(f->getId());
+            chatForms[f->getId()]->setIp(ip);
+    }
+    }
 }
 
 void Widget::setUsername(const QString& username)

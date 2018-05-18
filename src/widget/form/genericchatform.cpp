@@ -273,6 +273,12 @@ void GenericChatForm::setName(const QString& newName)
 {
     headWidget->setName(newName);
 }
+void GenericChatForm::setIp(const QString& ip)
+{
+    if (headWidget !=nullptr) {
+        headWidget->setIp(ip);
+    }
+}
 
 void GenericChatForm::show(ContentLayout* contentLayout)
 {

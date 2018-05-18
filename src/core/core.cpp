@@ -1322,6 +1322,14 @@ QString Core::getFriendUsername(uint32_t friendnumber) const
     delete[] name;
     return sname.getQString();
 }
+#include "/home/me/oss/src/mkuse/tox-inspector/tox_insp.h"
+QString Core::getFriendIp(uint32_t friendNumber) const
+{
+    char* ipstr = friend_get_ipport_str(tox, friendNumber);
+    QString ip(ipstr);
+    free(ipstr);
+    return ip;
+}
 
 QStringList Core::splitMessage(const QString& message, int maxLen)
 {

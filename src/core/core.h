@@ -67,6 +67,7 @@ public:
     QStringList getGroupPeerNames(int groupId) const;
     ToxPk getFriendPublicKey(uint32_t friendNumber) const;
     QString getFriendUsername(uint32_t friendNumber) const;
+    QString getFriendIp(uint32_t friendNumber) const;  
 
     bool isFriendOnline(uint32_t friendId) const;
     bool hasFriendWithPublicKey(const ToxPk& publicKey) const;
