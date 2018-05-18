@@ -198,6 +198,9 @@ void GroupChatForm::onAttachClicked()
     // Unsupported
 }
 
+#include <QDebug>
+#include <QApplication>
+#include <QClipboard>
 /**
  * @brief Updates user names' labels at the top of group chat
  */
@@ -225,7 +228,18 @@ void GroupChatForm::updateUserNames()
         if (editedName != fullName) {
             label->setToolTip(fullName);
         }
-        label->setTextFormat(Qt::PlainText);
+        // label->setTextFormat(Qt::PlainText);
+        label->setTextInteractionFlags(Qt::TextSelectableByMouse|Qt::LinksAccessibleByMouse);
+
+        const Core* core = Core::getInstance();
+        const ToxPk peerPk = core->getGroupPeerPk(group->getId(), peerNumber);
+        label->setToolTip(QString("%1: %2").arg(fullName).arg(peerPk.toString()));
+        label->setText(QString("<a style='text-decoration:none; color: black;' href='tox:%1'>%2,</a>").arg(peerPk.toString()).arg(fullName));
+        QObject::connect(label, &QLabel::linkActivated, [](const QString &link) {
+                qDebug()<<link;
+                qApp->clipboard()->setText(link);
+            });
+
         if (group->isSelfPeerNumber(peerNumber)) {
             // label->setStyleSheet(QStringLiteral("QLabel {color : green;}"));
         } else if (netcam != nullptr) {
@@ -241,7 +255,8 @@ void GroupChatForm::updateUserNames()
 
     qSort(nickLabelList.begin(), nickLabelList.end(), [](const QLabel* a, const QLabel* b)
     {
-        return a->text().toLower() < b->text().toLower();
+        return a->toolTip().toLower() < b->toolTip().toLower();
+        // return a->text().toLower() < b->text().toLower();
     });
     // remove comma from last sorted label
     QLabel* const lastLabel = nickLabelList.last();

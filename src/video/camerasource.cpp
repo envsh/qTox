@@ -109,7 +109,7 @@ CameraSource::CameraSource()
     moveToThread(deviceThread);
 
     subscriptions = 0;
-    av_register_all();
+    // av_register_all();
     avdevice_register_all();
 }
 
